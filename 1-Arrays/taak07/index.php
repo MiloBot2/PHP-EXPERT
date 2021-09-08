@@ -7,22 +7,20 @@
     <title>Document</title>
     <style>
         body {
-            padding: 20px;
+            padding: 25px;
         }
 
         h1 {
-
             font-weight: bolder;
         }
 
         .content {
-            border: 1px dashed purple;
+            border: 1px solid black;
             padding: 20px;
         }
 
         img {
             width: 100px;
-            /* height: 100px; */
         }
     </style>
 </head>
@@ -79,17 +77,32 @@
     <!-- Pas de code hieronder aan  -->
     <!-- Loop door de array $nieuwsberichten en toon de gegevens in de juist HTML-tags  -->
 
-
     <h1></h1>
     <div class="content">
 
-        <h2 class="title"></h2>
-        <p class="title"></p>
-        <img src="" class="title">
+        <?php
+        foreach ($nieuwsberichten as $object => $value) {
+            // Onderwerp
+            echo "<h1 class=title>" . $object . "</h1>";
 
+            foreach ($value as $value2) {
+
+                // Kopje:
+                echo "<h4 class=title>" . $value2['titel'] . "</h4>";
+
+                // Beschrijving
+                echo "<p class=title>" . $value2['beschrijving'] . "</p>";
+
+                // Plaatje
+                echo "<img src=" . $value2['image'] . ">";
+            }
+
+            /* Zorgt voor betere onderscheiding. */
+            for ($i = 0; $i < 3; $i++)
+                echo "<br>";
+        }
+        ?>
     </div>
-
-
 </body>
 
 </html>

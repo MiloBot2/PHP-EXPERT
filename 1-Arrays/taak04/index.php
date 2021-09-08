@@ -37,3 +37,9 @@ $games = [
         'prijs' => '40.00'
     ]
 ];
+
+for ($i = 0; $i < count($speelgoed); $i++) {
+    echo $speelgoed[$i]['naam'] . ", ";
+    echo $speelgoed[$i]['soort'] . ": ";
+    echo $speelgoed[$i]['prijs'] . "<br>";
+}
